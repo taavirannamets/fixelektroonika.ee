@@ -1,0 +1,628 @@
+/* styles.css */
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  position: relative;
+}
+
+iframe, object, embed { width: 100%; }
+
+form {
+  font-family: 'Source Sans Pro', Helvetica, arial, sans-serif;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+/* Navbar*/
+#wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu label {
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(0,0,0);
+  background: rgba(0,0,0,0);
+  width: 100px;
+  height: 100%;
+  transform: translate3d(-100px, 0, 0);
+  transition: transform .35s;
+  z-index: 998;
+}
+
+  .menu label.menu-toggle {
+    position: absolute;   
+    right: -60px;
+    width: 60px;
+    height: 60px;
+    line-height: 0;    
+    display: block;
+    padding: 0;
+    text-indent: -9999px;
+    background: #fff url(../img/button.png) 50% 50% no-repeat;
+  }
+
+       .menu a,
+       .menu label {
+        display: block;
+        text-align: center;
+        padding: 0 0;
+        line-height: 60px;
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,.5);
+        font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+      }
+
+      .menu a:hover, 
+      .menu a:focus, 
+      .menu a:active {
+        color: white;
+        text-decoration: none;
+        background-color: #45484d;
+        background-color: rgba(0,0,0,.75);
+        }
+
+      .menu label:hover, 
+      .menu label:focus, 
+      .menu label:active {
+        background: #fff url(../img/button_hover.png) 50% 50% no-repeat;
+        text-decoration: none;
+        background-color: rgba(0,0,0,.5);
+        }
+
+/* hide inputs */          
+.menu-checkbox {
+  display: none;
+}
+
+/* hide navigation icon for sublabels */    
+.menu .menu label.menu-toggle {
+  background: none;
+}
+    
+/* fade in checked menu */    
+.menu-checkbox:checked + .menu {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Cover */
+#cover {
+  background: #000 url(../img/background_9.jpg) center center no-repeat;
+  box-shadow: inset 0 0 0 1000px rgba(69,72,77,.25);
+  background-size: cover;
+  color: white;
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+#cover .container{  
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+#cover .container h1{
+  white-space: pre-wrap;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
+}
+
+.about-text {
+  color: white;
+  margin-top: .6rem;
+}
+
+.logo {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.logo img{
+  border-style: solid;
+  border-width: .2rem;
+  border-color: white;
+  padding: 1rem;  
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+#location {
+  font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
+  padding-bottom: .5rem;
+  margin-top: 2.5rem;
+}
+
+.time {
+  margin-top: -2rem;
+  padding-top: 0;
+  border-bottom-style: dotted;
+  border-bottom-color: white;
+  border-bottom-width: .1rem;
+}
+
+.time p{
+  font-size: 4rem;
+  font-family: 'Alfa Slab One', Helvetica, arial, cursive;
+  margin-bottom: -.6rem;
+}
+
+.number {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.number a{
+  text-decoration: none;
+  color: white;
+  font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
+  font-size: 2rem;
+}
+
+.number a:hover,
+.number a:focus,
+.number a:active{
+  color: black;
+  text-decoration: none;
+}
+
+/* Animated Arrow */
+a.button {
+    width: 63px;
+    height: 48px;
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    bottom: 0;
+    margin-left: -32px;
+    display: block;
+    background: url("../img/arrow.png") no-repeat;
+    cursor: pointer;
+    animation: 2s ease 0s normal none infinite down_btn;
+    -webkit-animation: 2s ease 0s normal none infinite down_btn
+    -moz-animation: 2s ease 0s normal none infinite down_btn
+}
+@keyframes down_btn {
+    0% {
+        margin-bottom: 2%;
+        margin-top: 15%;
+        opacity: .2
+    }
+    50% {
+        margin-bottom: 0;
+        margin-top: 20%;
+        opacity: 1
+    }
+    100% {
+        margin-bottom: 2%;
+        margin-top: 15%;
+        opacity: .2
+    }
+}
+@-moz-keyframes down_btn {
+    0% {
+        margin-bottom: 2%;
+        margin-top: 15%;
+        opacity: .2
+    }
+    50% {
+        margin-bottom: 0;
+        margin-top: 20%;
+        opacity: 1
+    }
+    100% {
+        margin-bottom: 2%;
+        margin-top: 15%;
+        opacity: .2
+    }
+}
+@-webkit-keyframes down_btn {
+    0% {
+        margin-bottom: 2%;
+        margin-top: 15%;
+        opacity: .2
+    }
+    50% {
+        margin-bottom: 0;
+        margin-top: 20%;
+        opacity: 1
+    }
+    100% {
+        margin-bottom: 2%;
+        margin-top: 15%;
+        opacity: .2
+    }
+}
+
+#about_meist{
+  margin-top: 600px;
+}
+
+/* Meist Page */
+#meist {
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid #333;
+  width: 4.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.intro {
+  color: grey;
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
+}
+
+.second_row {
+  color: grey;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+
+/* Break Line */
+.break_line {
+  border-bottom: 1px #d3d3d3;
+  border-bottom-style: dotted;
+}
+
+/* Remont Page */
+#remont {
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+  color: white;
+  border-bottom: 1px solid white;
+  width: 6.2rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.remont-background {
+  background: #000 url(../img/background_6.jpg) center center no-repeat;
+  box-shadow: inset 0 0 0 1000px rgba(69,72,77,.25);
+  background-size: cover;
+  border-bottom-style: dotted;
+  border-bottom-width: .1rem;
+  border-bottom-color: white;
+}
+
+.list-group {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  margin-top: 2rem;
+  position: relative;  
+}
+
+.list-group .list-unstyled {
+  display: block;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,.75);
+  margin-bottom: 4rem;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.list-group .list-unstyled li{
+  padding-left: 10%;
+  padding-right: 10%;
+  color: white;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+
+/* Footer */
+#footer-main {
+  background-color: #45484d;
+  color: white;
+  font-size: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#kontakt {
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+  color: white;
+  border-bottom: 1px solid white;
+  width: 6.2rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+#social-media ul li{
+  display: inline-block;
+  float: left;
+}
+
+#social-media ul li a{
+  padding: 1rem 1rem;
+}
+
+.details {
+  letter-spacing: .025rem;
+  font-family: 'Source Sans Pro', Helvetica, arial, sans-serif;
+  font-weight: 300;
+}
+
+#company {
+  color: DarkGrey;
+}
+
+#company p{
+  margin: auto;
+}
+
+#contact {
+  margin-top: 2rem;
+  font-weight: 400;
+}
+
+#contact p {
+  margin: auto;
+}
+
+#house {
+  padding-left: 5%;
+}
+
+#copyright {
+  background-color: black;
+  margin-top: 2rem;
+}
+
+#copyright p {
+  font-size: .8rem;
+  color: grey;
+}
+
+.result {
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif !important;
+  color: white !important;
+  z-index: 999;
+}
+
+@media (max-width: 543px) {
+
+/* Menu */
+.menu a:hover, 
+      .menu a:focus, 
+      .menu a:active {
+        background-color: Crimson;
+        }
+
+      .menu label:hover, 
+      .menu label:focus, 
+      .menu label:active {
+        background-color: Crimson;
+        }
+
+/* Result */
+.result {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo */
+
+.logo img{
+  max-width: 220px;
+}
+
+#cover .container h1{
+  font-size: .75rem;
+}
+
+.time {
+  padding-bottom: .5rem;
+}
+
+.time p{
+  font-size: 2.5rem;
+}
+
+.number {
+  background-color: Crimson;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: .5rem;
+  border-color: white;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.number a{
+  display: inline-block;
+  margin-bottom: -1rem;
+  margin-top: .5rem;
+  text-decoration: none;
+  color: white;
+  font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
+  font-size: 2rem;
+}
+
+/* Scroll Button */
+#about_meist{
+  margin-top: 420px;
+}
+
+/* Meist */
+.intro {
+  color: grey;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-family: 'Roboto Slab', Helvetica, arial, sans-serif;
+}
+
+.second_row {
+  display: none;
+}
+
+/* Remont Background */
+.remont-background {
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.75);
+}
+
+/* Remont List */
+  .list-group {
+  display: inline;
+}
+
+.list-group .list-unstyled {
+  background-color: rgba(0,0,0,0);
+}
+
+.list-group .list-unstyled li{
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+.map {
+  margin-bottom: -4rem;
+}
+
+#house {
+  display: none;
+}
+
+.details {
+  margin-top: -4rem;
+  margin-bottom: 6rem;
+}
+
+#social-media ul{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+#social-media ul li a{
+  font-size: 2rem !important;
+}
+
+.fa-facebook-square,
+.fa-google-plus-square {
+  color: white !important;
+}
+
+/* Form */
+#submit {
+  background-color: Crimson;
+  border-color: white;
+  border-width: .15rem;
+  color: LightGrey;
+}
+
+#submit:hover, #submit:focus, #submit.focus, #submit:active, #submit.active, .open {
+  color: white;
+  border-color: white;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+
+}
+
+@media (max-width: 767px) {
+  .map {
+    margin-bottom: -4rem;
+  }
+
+  #house {
+  display: none;
+}
+
+  .details {
+    margin-top: -4rem;
+    margin-bottom: 7rem;
+  }
+
+  #social-media ul{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  #social-media ul li a{
+    font-size: 3rem !important;
+  }
+
+  .form-group {
+  padding-right: 0;
+}
+}
